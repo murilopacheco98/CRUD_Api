@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/recados")
+@CrossOrigin()
 public class RecadoController {
 
   @Autowired
@@ -22,7 +23,7 @@ public class RecadoController {
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Recados> findId(@PathVariable("id") Long id){
+  public ResponseEntity<Recados> findid(@PathVariable("id") Long id){
     Recados recado = service.findById(id);
     return ResponseEntity.ok(recado);
   }
@@ -34,7 +35,7 @@ public class RecadoController {
   }
 
   @PostMapping
-  public String insert(@RequestBody Recados recado){
+  public String create(@RequestBody Recados recado){
     service.save(recado);
     return "salvo com sucesso";
   }
@@ -44,6 +45,6 @@ public class RecadoController {
     if(service.remove(id)) {
       return "Apagado com sucesso";
     }
-    return "Usuário não encotrado";
+    return "Usuário não encontrado";
   }
 }
