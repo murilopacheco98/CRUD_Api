@@ -7,14 +7,16 @@ public class Recados {
   private String assunto;
   private String descricao;
   private Boolean arquivado;
+  private String status;
 
   public Recados() {
   }
 
-  public Recados( String assunto, String descricao, Boolean arquivado) {
+  public Recados( String assunto, String descricao, Boolean arquivado, String status) {
     this.assunto = assunto;
     this.descricao = descricao;
     this.arquivado = arquivado;
+    this.status = status;
   }
 
   public Recados(Long id, String assunto, String descricao, Boolean arquivado) {
@@ -22,6 +24,14 @@ public class Recados {
     this.assunto = assunto;
     this.descricao = descricao;
     this.arquivado = arquivado;
+  }
+
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public Long getId() {
@@ -63,6 +73,7 @@ public class Recados {
             ", assunto='" + assunto + '\'' +
             ", descricao='" + descricao + '\'' +
             ", arquivado=" + arquivado +
+            ", status='" + status + '\'' +
             '}';
   }
 
@@ -71,11 +82,11 @@ public class Recados {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Recados recados = (Recados) o;
-    return Objects.equals(id, recados.id) && Objects.equals(assunto, recados.assunto) && Objects.equals(descricao, recados.descricao) && Objects.equals(arquivado, recados.arquivado);
+    return Objects.equals(id, recados.id) && Objects.equals(assunto, recados.assunto) && Objects.equals(descricao, recados.descricao) && Objects.equals(arquivado, recados.arquivado) && Objects.equals(status, recados.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assunto, descricao, arquivado);
+    return Objects.hash(id, assunto, descricao, arquivado, status);
   }
 }
