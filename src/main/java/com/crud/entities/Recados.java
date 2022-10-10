@@ -6,19 +6,21 @@ public class Recados {
   private Long id = 0L;
   private String assunto;
   private String descricao;
+  private Boolean arquivado;
 
   public Recados() {
-
   }
+
   public Recados(Long id, String assunto, String descricao) {
     this.id = id;
     this.assunto = assunto;
     this.descricao = descricao;
   }
 
-  public Recados(String assunto, String descricao) {
+  public Recados(String assunto, String descricao, Boolean arquivado) {
     this.assunto = assunto;
     this.descricao = descricao;
+    this.arquivado = arquivado;
   }
 
   public Long getId() {

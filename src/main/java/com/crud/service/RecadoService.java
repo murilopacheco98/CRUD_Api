@@ -15,7 +15,7 @@ public class RecadoService {
   List<Recados> bdRecados = new ArrayList<>();
 
   public Recados save(RecadoDto recadoDto) {
-    Recados recado = new Recados(recadoDto.getAssunto(), recadoDto.getDescricao());
+    Recados recado = new Recados(recadoDto.getAssunto(), recadoDto.getDescricao(), recadoDto.getArquivado());
     if (bdRecados.size() != 0) {
       recado.setId(bdRecados.get(bdRecados.size() - 1).getId() + 1);
       bdRecados.add(recado);
