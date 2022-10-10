@@ -55,12 +55,12 @@ public class RecadoService {
     for (Recados recados : bdRecados) {
       if(Objects.equals(recados.getId(), id)) {
         bdRecados.remove(recados);
-        int posicao = Math.toIntExact(recados.getId());
-        for (Recados recados2 : bdRecados) {
-          if (Math.toIntExact(recados2.getId()) > posicao) {
-            recados2.setId(recados2.getId() - 1);
-          }
-        }
+//        int posicao = Math.toIntExact(recados.getId());
+//        for (Recados recados2 : bdRecados) {
+//          if (Math.toIntExact(recados2.getId()) > posicao) {
+//            recados2.setId(recados2.getId() - 1);
+//          }
+//        }
         return true;
       }
     }
