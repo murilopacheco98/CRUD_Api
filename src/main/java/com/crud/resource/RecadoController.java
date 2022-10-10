@@ -36,9 +36,9 @@ public class RecadoController {
   }
 
   @PostMapping
-  public String create(@RequestBody RecadoDto recadoDto){
-    service.save(recadoDto);
-    return "salvo com sucesso";
+  public ResponseEntity<Recados>  create(@RequestBody RecadoDto recadoDto){
+    Recados recado = service.save(recadoDto);
+    return ResponseEntity.ok(recado);
   }
 
   @DeleteMapping("/{id}")

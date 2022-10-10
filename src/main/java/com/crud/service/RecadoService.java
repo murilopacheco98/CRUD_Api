@@ -14,14 +14,16 @@ public class RecadoService {
   //SIMULANDO BANCO DE DADOS
   List<Recados> bdRecados = new ArrayList<>();
 
-  public void save(RecadoDto recadoDto) {
+  public Recados save(RecadoDto recadoDto) {
     Recados recado = new Recados(recadoDto.getAssunto(), recadoDto.getDescricao());
     if (bdRecados.size() != 0) {
       recado.setId(bdRecados.get(bdRecados.size() - 1).getId() + 1);
       bdRecados.add(recado);
+      return recado;
     } else {
       recado.setId(1L);
       bdRecados.add(recado);
+      return recado;
     }
   }
 
