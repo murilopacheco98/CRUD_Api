@@ -1,6 +1,7 @@
 package com.crud.service;
 
 import com.crud.entities.Recados;
+import com.crud.entities.dto.RecadoDto;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ public class RecadoService {
   //SIMULANDO BANCO DE DADOS
   List<Recados> bdRecados = new ArrayList<>();
 
-  public void save(Recados recado) {
+  public void save(RecadoDto recadoDto) {
+    Recados recado = new Recados(recadoDto.getAssunto(), recadoDto.getDescricao());
     if (bdRecados.size() != 0) {
       recado.setId(bdRecados.get(bdRecados.size() - 1).getId() + 1);
       bdRecados.add(recado);

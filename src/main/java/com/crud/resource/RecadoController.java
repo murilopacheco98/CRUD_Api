@@ -1,6 +1,7 @@
 package com.crud.resource;
 
 import com.crud.entities.Recados;
+import com.crud.entities.dto.RecadoDto;
 import com.crud.service.RecadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class RecadoController {
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Recados> findid(@PathVariable("id") Long id){
+  public ResponseEntity<Recados> findid(@PathVariable("id") Long id) {
     Recados recado = service.findById(id);
     return ResponseEntity.ok(recado);
   }
@@ -35,8 +36,8 @@ public class RecadoController {
   }
 
   @PostMapping
-  public String create(@RequestBody Recados recado){
-    service.save(recado);
+  public String create(@RequestBody RecadoDto recadoDto){
+    service.save(recadoDto);
     return "salvo com sucesso";
   }
 

@@ -16,6 +16,11 @@ public class Recados {
     this.descricao = descricao;
   }
 
+  public Recados(String assunto, String descricao) {
+    this.assunto = assunto;
+    this.descricao = descricao;
+  }
+
   public Long getId() {
     return id;
   }

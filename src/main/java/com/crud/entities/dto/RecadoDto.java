@@ -1,45 +1,30 @@
 package com.crud.entities.dto;
 
 public class RecadoDto {
-  private Long id;
-  private String nome;
-  private Long idRoles;
-
-  public RecadoDto(Long id, String nome, Long idRoles) {
-    this.id = id;
-    this.nome = nome;
-    this.idRoles = idRoles;
-  }
-
-//  public RecadoDto(User user, Set<Roles> roles){
-//    this.id = user.getId();
-//    this.nome = user.getNome();
-//  }
+  private String assunto;
+  private String descricao;
 
   public RecadoDto() {
   }
 
-  public Long getId() {
-    return id;
+  public RecadoDto(String assunto, String descricao) {
+    this.assunto = assunto;
+    this.descricao = descricao;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public String getAssunto() {
+    return assunto;
   }
 
-  public String getNome() {
-    return nome;
+  public void setAssunto(String assunto) {
+    this.assunto = assunto;
   }
 
-  public void setNome(String nome) {
-    this.nome = nome;
+  public String getDescricao() {
+    return descricao;
   }
 
-  public Long getIdRoles() {
-    return idRoles;
-  }
-
-  public void setIdRoles(Long idRoles) {
-    this.idRoles = idRoles;
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
   }
 }
