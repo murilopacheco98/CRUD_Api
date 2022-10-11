@@ -46,6 +46,7 @@ public class RecadoService {
 //        recados.setId(recado.getId());
         recados.setAssunto(recado.getAssunto());
         recados.setDescricao(recado.getDescricao());
+        recados.setArquivado(recado.getArquivado());
         return;
       }
     }
