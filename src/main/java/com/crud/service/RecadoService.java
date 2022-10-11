@@ -80,7 +80,8 @@ public class RecadoService {
       if (recado.getAssunto().matches("(.*)" + search + "(.*)")) {
         if (recado.getStatus().equals(status)){
           bdRecadosConsultados.add(recado);
-        } else {
+        }
+        if (Objects.equals(recado.getStatus(), "Todos")) {
           bdRecadosConsultados.add(recado);
         }
       }
