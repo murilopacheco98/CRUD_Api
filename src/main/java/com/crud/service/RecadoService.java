@@ -67,4 +67,24 @@ public class RecadoService {
     }
     return false;
   }
+
+  public List<Recados> consulta(String search, String status) {
+    List<Recados> bdRecadosConsultados = new ArrayList<>();
+    search = search.trim();
+    for (Recados recado : bdRecados) {
+      if (Objects.equals(search, "")) {
+        if (recado.getStatus().equals(status)){
+          bdRecadosConsultados.add(recado);
+        }
+      }
+      if (recado.getAssunto().matches("(.*)" + search + "(.*)")) {
+        if (recado.getStatus().equals(status)){
+          bdRecadosConsultados.add(recado);
+        } else {
+          bdRecadosConsultados.add(recado);
+        }
+      }
+    }
+    return bdRecadosConsultados;
+  }
 }
