@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/recados")
 @Api(value = "Api rest")
-@CrossOrigin("*")
+@CrossOrigin
 public class RecadoController {
 
     @Autowired
