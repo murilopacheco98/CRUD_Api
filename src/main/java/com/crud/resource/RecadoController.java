@@ -12,8 +12,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/recados")
-@Api(value = "Api rest")
-@CrossOrigin
+//@Api(value = "Api rest")
+@CrossOrigin()
 public class RecadoController {
 
     @Autowired
