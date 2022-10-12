@@ -29,7 +29,7 @@ public class RecadoController {
         return ResponseEntity.ok(recado);
     }
 
-    @GetMapping("/{search}/{status}")
+    @GetMapping("/")
     public ResponseEntity<List<Recados>> search(@RequestParam("search") String search, @RequestParam("status") String status) {
       List<Recados> recado = service.consulta(search, status);
       return ResponseEntity.ok(recado);
