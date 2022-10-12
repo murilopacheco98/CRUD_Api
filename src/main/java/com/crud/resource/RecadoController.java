@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/recados")
-@CrossOrigin()
+@CrossOrigin("*")
 public class RecadoController {
     @Autowired
     private RecadoService service;
