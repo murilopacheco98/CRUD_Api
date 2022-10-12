@@ -81,7 +81,7 @@ public class RecadoService {
         if (recado.getStatus().equals(status)){
           bdRecadosConsultados.add(recado);
         }
-        if (Objects.equals(recado.getStatus(), "Todos")) {
+        if (Objects.equals(status, "todos")) {
           bdRecadosConsultados.add(recado);
         }
       }

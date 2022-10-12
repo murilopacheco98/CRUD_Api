@@ -11,7 +11,6 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
 public class SwaggerConfig {
-
   @Bean
   public Docket recadosApi() {
     return new Docket(DocumentationType.SWAGGER_2)
@@ -20,7 +19,6 @@ public class SwaggerConfig {
             .paths(postPaths())
             .build();
   }
-
   private Predicate<String> postPaths() {
 //        return or(regex("/produto/.*"), or(regex("/categoria/.*")));
 //        return or(regex("/(produto|categoria)"), regex("/(produto|categoria)/.*"));
