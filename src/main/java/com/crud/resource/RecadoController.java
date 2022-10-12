@@ -3,7 +3,6 @@ package com.crud.resource;
 import com.crud.entities.Recados;
 import com.crud.entities.dto.RecadoDto;
 import com.crud.service.RecadoService;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/recados")
-//@Api(value = "Api rest")
 @CrossOrigin()
 public class RecadoController {
-
     @Autowired
     private RecadoService service;
 
