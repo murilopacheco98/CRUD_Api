@@ -72,8 +72,12 @@ public class RecadoService {
     List<Recados> bdRecadosConsultados = new ArrayList<>();
     search = search.trim();
     for (Recados recado : bdRecados) {
-      if (Objects.equals(search, "")) {
+//      if (Objects.equals(search, null)) {
+      if (search.length() < 1) {
         if (recado.getStatus().equals(status)){
+          bdRecadosConsultados.add(recado);
+        }
+        if (Objects.equals(status, "todos")) {
           bdRecadosConsultados.add(recado);
         }
       }
