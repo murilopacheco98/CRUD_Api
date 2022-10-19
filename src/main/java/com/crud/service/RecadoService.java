@@ -2,6 +2,7 @@ package com.crud.service;
 
 import com.crud.entities.Recados;
 import com.crud.entities.dto.RecadoDto;
+import com.crud.exception.ExceptionNotFound;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,6 +16,12 @@ public class RecadoService {
   List<Recados> bdRecados = new ArrayList<>();
 
   public Recados save(RecadoDto recadoDto) {
+    if(recadoDto.getAssunto() == null) {
+      throw new ExceptionNotFound("Todos os campos devem estar preenchidos");
+    }
+    if(recadoDto.getDescricao() == null) {
+      throw new ExceptionNotFound("Todos os campos devem estar preenchidos");
+    }
     Recados recado = new Recados(recadoDto.getAssunto(), recadoDto.getDescricao(), recadoDto.getArquivado(), recadoDto.getStatus());
     if (bdRecados.size() != 0) {
       recado.setId(bdRecados.get(bdRecados.size() - 1).getId() + 1);
@@ -56,12 +63,6 @@ public class RecadoService {
     for (Recados recados : bdRecados) {
       if(Objects.equals(recados.getId(), id)) {
         bdRecados.remove(recados);
-//        int posicao = Math.toIntExact(recados.getId());
-//        for (Recados recados2 : bdRecados) {
-//          if (Math.toIntExact(recados2.getId()) > posicao) {
-//            recados2.setId(recados2.getId() - 1);
-//          }
-//        }
         return true;
       }
     }

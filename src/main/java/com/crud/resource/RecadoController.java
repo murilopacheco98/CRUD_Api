@@ -4,6 +4,7 @@ import com.crud.entities.Recados;
 import com.crud.entities.dto.RecadoDto;
 import com.crud.service.RecadoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,6 +42,7 @@ public class RecadoController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Recados> create(@RequestBody RecadoDto recadoDto) {
         Recados recado = service.save(recadoDto);
         return ResponseEntity.ok(recado);
