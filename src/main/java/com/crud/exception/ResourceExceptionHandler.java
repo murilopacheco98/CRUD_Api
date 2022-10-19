@@ -24,7 +24,7 @@ public class ResourceExceptionHandler {
     }
 
     @ExceptionHandler(DatabaseException.class)
-    public ResponseEntity<StandardError> entityNotFound(DatabaseException e, HttpServletRequest request) {
+    public ResponseEntity<StandardError> serverError(DatabaseException e, HttpServletRequest request) {
         StandardError error = new StandardError();
         error.setTimestamp(Instant.now());
         error.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
@@ -36,7 +36,7 @@ public class ResourceExceptionHandler {
     }
 
     @ExceptionHandler(BadRequestException.class)
-    public ResponseEntity<StandardError> entityNotFound(BadRequestException e, HttpServletRequest request) {
+    public ResponseEntity<StandardError> badRequest(BadRequestException e, HttpServletRequest request) {
         StandardError error = new StandardError();
         error.setTimestamp(Instant.now());
         error.setStatus(HttpStatus.BAD_REQUEST.value());
